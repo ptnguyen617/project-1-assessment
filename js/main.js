@@ -32,7 +32,7 @@ function calculate (sum) {
         result -= parseInt(input.value);
     }
 
-    blackRed = (result >= 0) ? 'black' : 'red';
+    blackRed = (result >= 0) ? 'red' : 'black';
     render();
 }
 controls.addEventListener('click', calculate);
