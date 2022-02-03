@@ -7,14 +7,12 @@ Manipulate a DOM element's content and style.
 
 
 let result;
-let color;
+let blackRed;
 
-/*cached elements*/
 const input = document.getElementById('input');
 const count = document.getElementById('count');
 const controls = document.getElementById('controls');
 
-/*functions*/
 function init () {
     result = 0;
     render();
@@ -24,19 +22,17 @@ init();
 
 function render () {
     count.textContent = result;
-    count.style.color = color;
+    count.style.color = blackRed;
 }
 
-function calc (e) {
-    if (e.target.id === 'plus') {
+function calculate (sum) {
+    if (sum.target.id === 'plus') {
         result += parseInt(input.value);
-    } else if (e.target.id === 'minus') {
+    } else if (sum.target.id === 'minus') {
         result -= parseInt(input.value);
     }
 
-    color = (result >= 0) ? 'black' : 'red';
+    blackRed = (result >= 0) ? 'black' : 'red';
     render();
 }
-
-/*event listeners*/
-controls.addEventListener('click', calc);
+controls.addEventListener('click', calculate);
